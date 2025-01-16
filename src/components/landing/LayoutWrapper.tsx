@@ -1,27 +1,21 @@
 "use client"
 
-import React, { useState, useCallback, useMemo } from 'react'
-import { TypeAnimation } from 'react-type-animation'
-import Navbar from '../NavBar'
+import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import Hero from './Hero'
+import Navbar from '../NavBar'
+import { backgroundImages, backgroundColors } from '@/lib/carouselData'
 
 export default function SynchronizedLayout() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentColor, setCurrentColor] = useState(backgroundColors[0])
 
   const specialties = useMemo(() => [
     'Comunicacion Visual',
-    'Impresión Digital',
-    'Envases y embalajes',
     'Impresión Offset',
+    'Envases y embalajes',
+    'Impresión Digital',
     'Merchandising',
-  ], [])
-
-  const backgroundColors = useMemo(() => [
-    '#60A5FA', // Light blue for Packaging
-    '#FCD34D', // Yellow for Offset
-    '#EC4899', // Pink for Merchandising
-    '#60A5FA', // Light blue for Packaging
-    '#FCD34D', // Yellow for Offset
+    'Vasos Polipapel',
   ], [])
 
   const features = useMemo(() => [
@@ -34,7 +28,8 @@ export default function SynchronizedLayout() {
 
   const scrollTo = useCallback((index: number) => {
     setCurrentIndex(index % features.length)
-  }, [features.length])
+    setCurrentColor(backgroundColors[index % backgroundColors.length])
+  }, [features.length, backgroundColors])
 
   const typeAnimationSequence = useMemo(() =>
     specialties.flatMap((specialty, index) => [
@@ -46,13 +41,13 @@ export default function SynchronizedLayout() {
 
   return (
     <>
-      <Navbar currentIndex={currentIndex} backgroundColors={backgroundColors} />
+      <Navbar currentColor={currentColor} currentIndex={currentIndex} />
       <Hero
         currentIndex={currentIndex}
-        specialties={specialties}
         backgroundColors={backgroundColors}
         features={features}
         typeAnimationSequence={typeAnimationSequence}
+        backgroundImages={backgroundImages}
       />
     </>
   )

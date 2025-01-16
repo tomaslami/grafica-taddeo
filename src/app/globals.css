@@ -48,3 +48,20 @@ body {
   height: var(--slide-height);
   user-select: none;
 }
+
+
+
+.swiper-pagination-bullet {
+  background-color: #FFF;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #FFF;
+  opacity: 1;
+}
+
+.mySwiper {
+  padding-bottom: 50px;
+}
+

@@ -1,46 +1,81 @@
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-
-const images = [
-  { src: "/placeholder.svg?height=300&width=300", alt: "Printing process" },
-  { src: "/placeholder.svg?height=300&width=300", alt: "Quality control" },
-  { src: "/placeholder.svg?height=300&width=300", alt: "Production process" },
-  { src: "/placeholder.svg?height=300&width=300", alt: "Printing equipment" },
-]
+import ContactButton from '../ContactButton'
+import Link from 'next/link'
 
 const paragraphs = [
-  "SOMOS una compañía especializada en impresión y soluciones gráficas fundada en el año 1992, ofreciendo trabajos de calidad excepcional con equipo profesional.",
-  "OFRECEMOS un servicio de atención personalizada y asesoramiento tanto para la selección del tipo de papel como para los sistemas de impresión más adecuados, con el fin de que el mensaje que desea sea distinguido y se comunique directamente al público deseado de forma eficaz.",
-  "ESTAMOS en constante actualización en recursos humanos y tecnología lo que nos permite la obtención de productos de máxima calidad, competitivos en tiempo y forma y reducción de los costos finales.",
-  "SABEMOS que la calidad de una empresa se mide por la calidad de su impresión a través de sus productos, por eso elaboramos trabajos priorizando la calidad en el resultado final contemplando siempre los tiempos de entrega establecidos."
+  "SOMOS una compañía especializada en impresión y soluciones gráficas que nació en el año 1992, ofreciendo trabajos de calidad elaborados con equipo profesional.",
+  "OFRECEMOS un servicio de atención personalizada y asesoramiento tanto para la selección del tipo de papel como para los sistemas de impresión más adecuados. Logramos que el mensaje que desea proyectar sea distinguido y se comunique directamente al público deseado de forma eficaz.",
+  "ESTAMOS en constante actualización en recursos humanos y tecnología lo que nos permite la obtención de productos de máxima calidad, entrega en tiempo y forma y reducción de los costos finales.",
+  "SABEMOS que la imagen es fundamental para lograr un alcance impresivo a través de sus productos, por eso elaboramos trabajos priorizando la calidad en el resultado final contemplando siempre los tiempos y expectativas de entrega."
 ]
 
 export default function AboutSection() {
   return (
-    <section id='historia' className="container mx-auto py-16 px-16 md:py-24 ">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
-        <div className="grid grid-cols-2 gap-4 ">
-          {images.map((img, index) => (
-            <div key={index} className="relative aspect-square">
-              <Image src={img.src} alt={img.alt} fill className="object-cover rounded-lg  bg-black/40" />
+    <section id='historia' className="w-full bg-white py-12 md:py-16">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          {/* Columna de imágenes */}
+          <div className="grid grid-cols-2 gap-3 h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] relative">
+            <div className="relative lg:aspect-[5/6] col-span-1 lg:top-4">
+              <Image
+                src="/placeholder.svg"
+                alt="Proceso de impresión"
+                fill
+                className="object-cover rounded-lg bg-gray-400"
+              />
             </div>
-          ))}
-        </div>
-        <div className="space-y-6">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-medium">¿Quienes somos?</h2>
-            <h3 className="text-3xl font-bold">Desde 1992 ofreciendo trabajos de calidad.</h3>
+            <div className="relative lg:aspect-[6/5] col-span-1 lg:top-10">
+              <Image
+                src="/placeholder.svg"
+                alt="Control de calidad"
+                fill
+                className="object-cover rounded-lg bg-gray-400"
+              />
+            </div>
+            <div className="relative lg:flex lg:w-full lg:h-max lg:aspect-[6/5] col-span-1 lg:justify-end lg:mt-6">
+              <Image
+                src="/placeholder.svg"
+                alt="Proceso de producción"
+                fill
+                className="object-cover rounded-lg bg-gray-400"
+              />
+            </div>
+            <div className="relative lg:aspect-[5/6]  col-span-1 lg:bottom-16">
+              <Image
+                src="/placeholder.svg"
+                alt="Equipo de trabajo"
+                fill
+                className="object-cover rounded-lg bg-gray-400"
+              />
+            </div>
           </div>
-          <div className="space-y-4 text-gray-600">
-            {paragraphs.map((p, index) => (
-              <p key={index}>{p}</p>
-            ))}
+
+          {/* Columna de contenido */}
+          <div className="flex flex-col justify-center space-y-4 mt-8 lg:mt-0">
+            <div className="space-y-1">
+              <h2 className="text-lg font-medium text-black">¿Quienes somos?</h2>
+              <h3 className="text-2xl md:text-3xl font-bold text-black">
+                Desde 1992 ofreciendo trabajos de calidad.
+              </h3>
+            </div>
+
+            <div className="space-y-3 text-gray-600 text-sm md:text-base">
+              {paragraphs.map((p, index) => (
+                <p key={index} className="leading-relaxed">
+                  {p}
+                </p>
+              ))}
+            </div>
+
+            <div className="pt-2">
+              <Link
+                href="/contacto"
+                className='px-5 py-1.5 rounded-lg bg-[#FAED14] font-medium '
+              >
+                Contáctanos para asesorarte
+              </Link>
+            </div>
           </div>
-          <button
-            className="px-8 py-3 bg-yellow-400 text-white font-medium rounded-md hover:bg-yellow-500 transition-colors"
-          >
-            Contáctanos
-          </button>
         </div>
       </div>
     </section>

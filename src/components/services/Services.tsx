@@ -1,96 +1,90 @@
+"use client"
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 const services = [
   {
-    title: 'Impresión Offset',
-    image: '/placeholder.svg?height=400&width=600',
-    href: '/servicios/impresion-offset'
-  },
-  {
     title: 'Comunicación Visual',
-    image: '/placeholder.svg?height=400&width=600',
-    href: '/servicios/comunicacion-visual'
+    image: '/comunicacion-visual/comuVisual-portada.jpg',
+    href: '/comunicacion-visual',
+    gridClass: 'md:col-span-2 md:row-span-2'
   },
   {
-    title: 'Impresión Digital',
-    image: '/placeholder.svg?height=400&width=600',
-    href: '/servicios/impresion-digital'
-  },
-  {
-    title: 'Envases y Embalajes',
-    image: '/placeholder.svg?height=400&width=800',
-    href: '/servicios/envases-y-embalajes'
+    title: 'Impresión Offset',
+    image: '/impresion-offset/offset-portada.jpg',
+    href: '/impresion-offset',
+    gridClass: 'md:col-span-1'
   },
   {
     title: 'Merchandising',
-    image: '/placeholder.svg?height=400&width=800',
-    href: '/servicios/merchandising'
-  }
+    image: '/merchandising/portada-merch.webp',
+    href: '/merchandising',
+    gridClass: 'md:col-span-1'
+  },
+  {
+    title: 'Envases y Embalajes',
+    image: '/envases-embalajes/portada-embalajes.webp',
+    href: '/envases-embalajes',
+    gridClass: 'md:col-span-2 md:row-span-2'
+  },
+  {
+    title: 'Vasos Polipapel',
+    image: '/vasos-polipapel/portada-vasos.webp',
+    href: '/vasos-polipapel',
+    gridClass: 'md:col-span-1 md:row-span-1'
+  },
+  {
+    title: 'Impresión Digital',
+    image: '/impresion-digital/digital-portada.jpg',
+    href: '/impresion-digital',
+    gridClass: 'md:col-span-1 md:row-span-1'
+  },
 ]
 
 export default function Services() {
   return (
-    <section id='servicios' className="w-full bg-gray-50 py-16 px-4 md:py-24">
+    <section id='servicios' className="w-full bg-white py-12 px-4 md:py-20">
       <div className="w-[90%] max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          ¡Descubrí Nuestros <span className="text-pink-500">Servicios</span>!
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-12">
-          {/* First row - 3 equal cards */}
-          {services.slice(0, 3).map((service, index) => (
-            <Link
-              key={service.title}
-              href={service.href}
-              className="md:col-span-2 group relative overflow-hidden rounded-2xl"
-            >
-              <div className="aspect-[4/3]">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
-                <h3 className="absolute bottom-4 left-4 text-white text-xl font-medium">
-                  {service.title}
-                </h3>
-              </div>
-            </Link>
-          ))}
-
-          {/* Second row - 2 wider cards */}
-          {services.slice(3).map((service, index) => (
-            <Link
-              key={service.title}
-              href={service.href}
-              className="md:col-span-3 group relative overflow-hidden rounded-2xl"
-            >
-              <div className="aspect-[2/1]">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
-                <h3 className="absolute bottom-4 left-4 text-white text-xl font-medium">
-                  {service.title}
-                </h3>
-              </div>
-            </Link>
-          ))}
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-medium">
+            Descubrí nuestros <span className="text-pink-500">servicios</span>
+          </h2>
         </div>
 
-        <div className="flex justify-center">
-          <button
-            className="px-8 py-3 bg-pink-500 text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
-          >
-            Contáctanos
-          </button>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
+          {services.map((service) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className={`relative overflow-hidden rounded-2xl ${service.gridClass}`}
+            >
+              <Link href={service.href}>
+                <div className="group relative h-full w-full">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white text-lg md:text-xl font-medium">
+                      {service.title}
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   )
 }
+

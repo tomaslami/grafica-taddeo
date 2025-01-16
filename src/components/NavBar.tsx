@@ -1,18 +1,46 @@
-"use client"
+'use client'
 
-import { useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import ContactButton from './ContactButton'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { isMainThread } from 'worker_threads'
 
 interface NavbarProps {
-  currentIndex: number;
-  backgroundColors: string[];
+  currentColor?: string;
+  currentIndex?: number;
 }
 
-export default function Navbar({ currentIndex, backgroundColors }: NavbarProps) {
+export default function Navbar({ currentColor, currentIndex }: NavbarProps) {
+  const pathname = usePathname()
+  const isMainRoute = pathname === '/'
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const textColor = isScrolled ? 'text-black' : 'text-white'
+
+  const navBackground = isScrolled
+    ? 'bg-white/80'
+    : 'bg-white/10'
+
   return (
-    <nav className="w-full py-4 px-6 fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50">
+    <motion.nav
+      className={`w-full py-4 px-6 fixed top-0 left-0 right-0 backdrop-blur-md z-50 transition-colors duration-
+        100 ${navBackground} `}
+      animate={{
+        borderBottom: isScrolled ? '1px solid #e5e7eb' : '1px solid transparent'
+      }}
+    >
       <div className="w-[90%] max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="relative w-40 h-12">
           <Image
@@ -26,36 +54,36 @@ export default function Navbar({ currentIndex, backgroundColors }: NavbarProps) 
 
         <ul className="hidden md:flex items-center space-x-8">
           <li>
-            <Link href="/" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/" className={`${textColor} transition-colors`}>
               Inicio
             </Link>
           </li>
           <li>
-            <Link href="/#servicios" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/#servicios" className={`${textColor} transition-colors`}>
               Servicios
             </Link>
           </li>
           <li>
-            <Link href="/#plantas" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/#plantas" className={`${textColor} transition-colors`}>
               Plantas
             </Link>
           </li>
           <li>
-            <Link href="/#historia" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/#historia" className={`${textColor} transition-colors`}>
               Historia
             </Link>
           </li>
         </ul>
 
-        <motion.button
-          animate={{ backgroundColor: backgroundColors[currentIndex] }}
-          transition={{ duration: 1 }}
-          className="px-6 py-2 rounded-full text-white font-medium hover:opacity-90 transition-opacity"
-        >
-          Contáctanos
-        </motion.button>
+        <ContactButton
+          isMainRoute={isMainRoute}
+          isScrolled={isScrolled}
+          currentColor={currentColor}
+          currentIndex={currentIndex}
+          className='px-5 py-1 rounded-lg'
+        />
+
       </div>
-    </nav>
+    </motion.nav>
   )
 }
-

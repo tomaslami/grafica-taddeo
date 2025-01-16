@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import Navbar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Gráfica Taddeo",
@@ -17,8 +18,9 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

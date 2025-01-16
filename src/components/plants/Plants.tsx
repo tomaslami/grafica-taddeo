@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import ContactButton from '../ContactButton'
 
 const plants = [
   {
@@ -24,9 +25,8 @@ export default function Plants() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {plants.map((plant) => (
-            <Link
+            <div
               key={plant.title}
-              href={plant.href}
               className="group relative overflow-hidden rounded-2xl"
             >
               <div className="aspect-[4/3]">
@@ -41,16 +41,8 @@ export default function Plants() {
                   {plant.title}
                 </h3>
               </div>
-            </Link>
+            </div>
           ))}
-        </div>
-
-        <div className="flex justify-center">
-          <button
-            className="px-8 py-3 bg-blue-400 text-white font-medium rounded-md hover:bg-blue-500 transition-colors"
-          >
-            Contáctanos
-          </button>
         </div>
       </div>
     </section>
