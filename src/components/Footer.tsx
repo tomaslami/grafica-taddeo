@@ -91,7 +91,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="mailto:grafica.taddeo@gmail.com"
+                  href="https://www.instagram.com/grafica_taddeo/"
                   className="flex items-center text-gray-600 hover:text-gray-900"
                 >
                   <Instagram className="w-4 h-4 mr-2 text-[#00B6FF]" />

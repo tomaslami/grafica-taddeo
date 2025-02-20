@@ -4,6 +4,7 @@ export interface Category {
   bgImage: string
   value: string
   subtitle: string
+  video: string
   text: string
   principalImage: string
   'carousel-1'?: string

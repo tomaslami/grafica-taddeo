@@ -19,25 +19,25 @@ const services = [
   },
   {
     title: 'Merchandising',
-    image: '/merchandising/portada-merch.webp',
+    image: '/merchandising/Merch4.webp',
     href: '/merchandising',
     gridClass: 'md:col-span-1'
   },
   {
     title: 'Envases y Embalajes',
-    image: '/envases-embalajes/portada-embalajes.webp',
+    image: '/envases-embalajes/envases_2.webp',
     href: '/envases-embalajes',
     gridClass: 'md:col-span-2 md:row-span-2'
   },
   {
     title: 'Vasos Polipapel',
-    image: '/vasos-polipapel/portada-vasos.webp',
+    image: '/vasos-polipapel/vasos_3.webp',
     href: '/vasos-polipapel',
     gridClass: 'md:col-span-1 md:row-span-1'
   },
   {
     title: 'Impresión Digital',
-    image: '/impresion-digital/digital-portada.jpg',
+    image: '/impresion-digital/impresion.webp',
     href: '/impresion-digital',
     gridClass: 'md:col-span-1 md:row-span-1'
   },

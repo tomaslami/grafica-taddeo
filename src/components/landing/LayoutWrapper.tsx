@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useState, useCallback, useMemo, useEffect } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import Hero from './Hero'
-import Navbar from '../NavBar'
+import Navbar from '../nav/NavBar'
 import { backgroundImages, backgroundColors } from '@/lib/carouselData'
 
 export default function SynchronizedLayout() {

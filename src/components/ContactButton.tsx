@@ -21,7 +21,7 @@ const ContactButton: FC<ContactButtonProps> = ({
   const router = useRouter()
 
   const handleClick = () => {
-    router.push(`/contacto`)
+    router.push(`https://wa.me/5491134217410`)
   }
 
   const buttonStyle = isMainRoute
