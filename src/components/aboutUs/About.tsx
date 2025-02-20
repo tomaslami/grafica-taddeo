@@ -1,5 +1,4 @@
 import Image from "next/image"
-import ContactButton from "../ContactButton"
 import Link from "next/link"
 
 const paragraphs = [

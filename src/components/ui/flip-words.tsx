@@ -7,7 +7,6 @@ export const FlipWords = ({
   words,
   className,
   currentIndex,
-  backgroundColor,
 }: {
   words: string[];
   className?: string;

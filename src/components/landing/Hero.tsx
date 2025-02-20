@@ -2,8 +2,7 @@
 
 import React from 'react'
 import { TypeAnimation } from 'react-type-animation'
-import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import BackgroundCarousel from './BackgroundCarousel'
 
 interface HeroProps {

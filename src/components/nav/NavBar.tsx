@@ -4,8 +4,8 @@ import Image from "next/image"
 import Link from "next/link"
 import ContactButton from "../ContactButton"
 import { usePathname } from "next/navigation"
-import { motion, AnimatePresence, useCycle } from "framer-motion"
-import { useEffect, useState, useRef } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { useEffect, useState } from "react"
 import BarsIcon from "./BarsIcon"
 
 interface NavbarProps {
