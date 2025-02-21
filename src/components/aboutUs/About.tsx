@@ -10,7 +10,7 @@ const paragraphs = [
 
 export default function AboutSection() {
   return (
-    <section id="historia" className="w-full bg-white py-12 md:py-16 scroll-m-10">
+    <section id="historia" className="w-full bg-white py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Columna de imágenes */}
@@ -32,17 +32,18 @@ export default function AboutSection() {
               />
             </div>
             <div className="relative lg:flex lg:w-full lg:h-max lg:aspect-[6/5] col-span-1 lg:justify-end lg:mt-6">
+              
               <Image
-                src="/images/image1.jpg"
-                alt="Proceso de producción"
+                src="/images/image2.jpg"
+                alt="Equipo de trabajo"
                 fill
                 className="object-cover rounded-lg bg-gray-400"
               />
             </div>
             <div className="relative lg:aspect-[5/6]  col-span-1 lg:bottom-16">
-              <Image
-                src="/images/image2.jpg"
-                alt="Equipo de trabajo"
+            <Image
+                src="/images/image1.jpg"
+                alt="Proceso de producción"
                 fill
                 className="object-cover rounded-lg bg-gray-400"
               />
