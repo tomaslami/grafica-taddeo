@@ -3,11 +3,11 @@ import Image from 'next/image'
 const plants = [
   {
     title: 'Planta Pompeya',
-    image: '/plants/pompeya.webp'
+    image: '/images2/plants/pompeya.webp'
   },
   {
     title: 'Planta Boedo',
-    image: '/plants/boedo.webp'
+    image: '/images2/plants/boedo.webp'
   }
 ]
 
