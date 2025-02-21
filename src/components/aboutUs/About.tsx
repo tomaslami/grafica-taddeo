@@ -66,7 +66,7 @@ export default function AboutSection() {
             </div>
 
             <div className="pt-2">
-              <Link href="https://wa.me/5491134217410" className="px-5 py-1.5 rounded-lg bg-[#FAED14] font-medium ">
+              <Link href="https://wa.me/5491134217410" className="px-5 py-1.5  bg-[#FAED14] font-medium ">
                 Contáctanos para asesorarte
               </Link>
             </div>
