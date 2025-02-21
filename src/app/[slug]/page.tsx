@@ -17,7 +17,7 @@ export default async function Category({ params }: { params: Params }) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative h-[400px] w-full">
+      <div className="relative h-[300px] sm:h-[350px] md:h-[400px] w-full">
         <Image
           src={category.bgImage || "/placeholder.svg"}
           alt={category.value}
@@ -26,28 +26,34 @@ export default async function Category({ params }: { params: Params }) {
           priority
         />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex items-center justify-start ">
+        <div className="absolute inset-0 flex items-center justify-start">
           <div className="container mx-auto px-4">
-            <h1 className="text-5xl font-bold text-white text-center">{category.value}</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">{category.value}</h1>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-[1200px] mx-auto space-y-8">
+      <div className="container mx-auto px-4 py-8 sm:py-10 md:py-12">
+        <div className="max-w-[1200px] mx-auto space-y-6 sm:space-y-8">
           {/* Title and Description */}
-          <div className="space-y-4 px-32">
-            <h2 className="text-2xl font-bold text-black">{category.subtitle}</h2>
+          <div className="space-y-4 px-4 sm:px-8 md:px-16 lg:px-32">
+            <h2 className="text-xl sm:text-2xl font-bold text-black">{category.subtitle}</h2>
             <div className="space-y-1 text-gray-600">
-              <p className="max-w-[400px]">{category.text}</p>
+              <p className="max-w-full sm:max-w-[400px]">{category.text}</p>
             </div>
           </div>
 
           {/* Video Section */}
-          <div className="px-32 mx-auto">
+          <div className="px-4 sm:px-8 md:px-16 lg:px-32 mx-auto">
             <div className="w-full rounded-lg shadow-lg">
-              <video className="w-full h-[400px] object-cover" autoPlay muted loop playsInline>
+              <video
+                className="w-full h-[200px] sm:h-[300px] md:h-[400px] object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
                 <source src={category.video || ""} type="video/mp4" />
                 Tu navegador no soporta el elemento de video.
               </video>
@@ -56,7 +62,7 @@ export default async function Category({ params }: { params: Params }) {
 
           {/* Carousel Section */}
           <article className="w-full">
-            <div className="w-full px-32">
+            <div className="w-full px-4 sm:px-8 md:px-16 lg:px-32">
               <Swipe
                 images={[
                   category["carousel-1"],

@@ -52,7 +52,7 @@ const Swipe: React.FC<SwipeProps> = ({ images }) => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className="flex items-center justify-center">
-            <div className="aspect-w-16 aspect-h-9 w-full border-2">
+            <div className="aspect-w-16 aspect-h-9 w-full border-2 rounded-xl">
               <Image
                 width={500}
                 height={500}
