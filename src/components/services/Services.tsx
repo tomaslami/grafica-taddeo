@@ -37,7 +37,7 @@ const services = [
   },
   {
     title: 'Impresión Digital',
-    image: '/impresion-digital/impresion1.webp',
+    image: '/impresion-digital/impresion6.webp',
     href: '/impresion-digital',
     gridClass: 'md:col-span-1 md:row-span-1'
   },
