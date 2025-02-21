@@ -13,7 +13,7 @@ const plants = [
 
 export default function Plants() {
   return (
-    <section id='plantas' className="w-full bg-gray-50 py-16 px-4 md:py-24">
+    <section id='plantas' className="w-full bg-gray-50 py-16 px-4 md:py-24 scroll-m-10" >
       <div className="w-[90%] max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Nuestras <span className="text-blue-400">Plantas</span>

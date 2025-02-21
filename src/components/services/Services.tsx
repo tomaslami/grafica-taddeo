@@ -37,7 +37,7 @@ const services = [
   },
   {
     title: 'Impresión Digital',
-    image: '/impresion-digital/impresion.webp',
+    image: '/impresion-digital/impresion1.webp',
     href: '/impresion-digital',
     gridClass: 'md:col-span-1 md:row-span-1'
   },
@@ -45,7 +45,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id='servicios' className="w-full bg-white py-12 px-4 md:py-20">
+    <section id='servicios' className="w-full bg-white py-12 px-4 md:py-20 scroll-m-10">
       <div className="w-[90%] max-w-7xl mx-auto">
         <div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium">

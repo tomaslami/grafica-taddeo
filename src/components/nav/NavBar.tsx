@@ -2,11 +2,11 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import ContactButton from "../ContactButton"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 import BarsIcon from "./BarsIcon"
+import ContactButton from "../ContactButton"
 
 interface NavbarProps {
   currentColor?: string
@@ -15,6 +15,7 @@ interface NavbarProps {
 
 export default function Navbar({ currentColor, currentIndex }: NavbarProps) {
   const pathname = usePathname()
+  const router = useRouter()
   const isMainRoute = pathname === "/"
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -28,7 +29,6 @@ export default function Navbar({ currentColor, currentIndex }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Prevenir scroll cuando el menú está abierto
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden"
@@ -47,6 +47,18 @@ export default function Navbar({ currentColor, currentIndex }: NavbarProps) {
     { href: "/#historia", label: "Historia" },
   ]
 
+  const handleNavItemClick = (href: string) => {
+    setIsOpen(false)
+    if (href.startsWith("/#")) {
+      const element = document.querySelector(href.substring(1))
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    } else {
+      router.push(href)
+    }
+  }
+
   return (
     <>
       <motion.nav
@@ -56,15 +68,22 @@ export default function Navbar({ currentColor, currentIndex }: NavbarProps) {
         }}
       >
         <div className="w-[90%] max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className=" relative w-40 h-12">
+          <Link href="/" className="relative w-40 h-12">
             <Image src="/logo.png" alt="Gráfica Taddeo" fill className="object-contain" priority />
           </Link>
           <ul className="w-[70%] hidden md:flex items-center justify-end gap-16">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className={`${textColor} transition-colors`}>
+                <a
+                  href={item.href}
+                  className={`${textColor} transition-colors cursor-pointer`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleNavItemClick(item.href)
+                  }}
+                >
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
             <ContactButton
@@ -72,11 +91,11 @@ export default function Navbar({ currentColor, currentIndex }: NavbarProps) {
               isScrolled={isScrolled}
               currentColor={currentColor}
               currentIndex={currentIndex}
-              className="w-max px-7 py-2  text-center"
+              className="w-max px-7 py-2 text-center"
             />
           </ul>
 
-          <div className="flex items-center gap-4 lg:hidden z-50">
+          <div className="flex items-center gap-4 md:hidden z-50">
             <BarsIcon
               isOpen={isOpen}
               setIsOpen={setIsOpen}
@@ -90,14 +109,14 @@ export default function Navbar({ currentColor, currentIndex }: NavbarProps) {
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0 z-50 md:hidden"
+              className="fixed inset-0 z-40 md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
             />
             <motion.div
-              className="fixed right-0 top-0 h-full w-[80%] max-w-[300px] bg-white z-30 md:hidden overflow-hidden"
+              className="fixed right-0 top-0 h-full w-[80%] max-w-[300px] bg-white z-40 md:hidden overflow-hidden"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -112,13 +131,16 @@ export default function Navbar({ currentColor, currentIndex }: NavbarProps) {
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.2 }}
                     >
-                      <Link
+                      <a
                         href={item.href}
                         className="text-gray-900 hover:text-gray-600 text-lg font-medium block py-2"
-                        onClick={() => setIsOpen(false)}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          handleNavItemClick(item.href)
+                        }}
                       >
                         {item.label}
-                      </Link>
+                      </a>
                     </motion.li>
                   ))}
                 </ul>
@@ -133,7 +155,8 @@ export default function Navbar({ currentColor, currentIndex }: NavbarProps) {
                     isScrolled={isScrolled}
                     currentColor={currentColor}
                     currentIndex={currentIndex}
-                    className="w-full px-7 py-2  text-center"
+                    className="w-full px-7 py-2 text-center block"
+                    onClick={() => setIsOpen(false)}
                   />
                 </motion.div>
               </div>
