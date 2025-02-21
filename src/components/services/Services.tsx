@@ -7,40 +7,40 @@ import { motion } from 'framer-motion'
 const services = [
   {
     title: 'Comunicación Visual',
-    image: '/images2/comunicacion-visual/comuVisual-portada.jpg',
+    image: '/comunicacion-visual/comuVisual-portada.jpg',
     href: '/comunicacion-visual',
     gridClass: 'md:col-span-2 md:row-span-2'
   },
   {
     title: 'Impresión Offset',
-    image: '/images2/impresion-offset/offset-portada.jpg',
+    image: '/impresion-offset/offset-portada.jpg',
     href: '/impresion-offset',
     gridClass: 'md:col-span-1'
   },
   {
     title: 'Merchandising',
-    image: '/images2/merchandising/Merch4.webp',
+    image: '/merchandising/Merch4.webp',
     href: '/merchandising',
     gridClass: 'md:col-span-1'
   },
   {
     title: 'Envases y Embalajes',
-    image: '/images2/envases-embalajes/envases_2.webp',
+    image: '/envases-embalajes/envases_2.webp',
     href: '/envases-embalajes',
     gridClass: 'md:col-span-2 md:row-span-2'
   },
   {
-    title: 'Impresión Digital',
-    image: '/images2/impresion-digital/impresion1.png',
-    href: '/impresion-digital',
+    title: 'Vasos Polipapel',
+    image: '/vasos-polipapel/vasos_3.webp',
+    href: '/vasos-polipapel',
     gridClass: 'md:col-span-1 md:row-span-1'
   },
   {
-    title: 'Vasos Polipapel',
-    image: '/images2/vasos-polipapel/vasos_3.webp',
-    href: '/vasos-polipapel',
+    title: 'Impresión Digital',
+    image: '/impresion-digital/impresion1.webp',
+    href: '/impresion-digital',
     gridClass: 'md:col-span-1 md:row-span-1'
-  }
+  },
 ]
 
 export default function Services() {
