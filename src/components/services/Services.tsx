@@ -30,17 +30,17 @@ const services = [
     gridClass: 'md:col-span-2 md:row-span-2'
   },
   {
-    title: 'Vasos Polipapel',
-    image: '/vasos-polipapel/vasos_3.webp',
-    href: '/vasos-polipapel',
-    gridClass: 'md:col-span-1 md:row-span-1'
-  },
-  {
     title: 'Impresión Digital',
     image: '/impresion-offset/impresion1.png',
     href: '/impresion-digital',
     gridClass: 'md:col-span-1 md:row-span-1'
   },
+  {
+    title: 'Vasos Polipapel',
+    image: '/vasos-polipapel/vasos_3.webp',
+    href: '/vasos-polipapel',
+    gridClass: 'md:col-span-1 md:row-span-1'
+  }
 ]
 
 export default function Services() {
