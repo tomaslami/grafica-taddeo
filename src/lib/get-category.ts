@@ -36,7 +36,7 @@ const categoryData: CategoryData = {
       "video": "/impresion-digital/digital.mp4",
       "text": "Ideal para pequeñas cantidades y trabajos urgentes. Alta velocidad de impresión sin chapa. Stickers precortados en baja demanda.",
       "principalImage": "",
-      "carousel-1": "/impresion-digital/Impresion.webp",
+      "carousel-1": "/impresion-digital/Impresion1.webp",
       "carousel-2": "/impresion-digital/Impresion2.webp",
       "carousel-3": "/impresion-digital/Impresion3.webp",
       "carousel-4": "/impresion-digital/Impresion4.webp",
