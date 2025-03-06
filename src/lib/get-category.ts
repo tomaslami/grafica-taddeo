@@ -21,7 +21,7 @@ const categoryData: CategoryData = {
       "value": "Comunicación Visual",
       "subtitle": "Impacto que Comunica",
       "video": "/comunicacion-visual/comunicacion.mp4",
-      "text": "Nuestros servicios abarcan desde letreros y pancartas hasta folletos, productos promocionales, banners y rool up. Marquesinas, letreros Luimosos.",
+      "text": "Nuestros servicios abarcan desde letreros y pancartas hasta folletos, productos promocionales, banners y rool up y marquesinas.",
       "principalImage": "",
       "carousel-1": "/comunicacion-visual/comu1.jpg",
       "carousel-2": "/comunicacion-visual/comu2.jpg",

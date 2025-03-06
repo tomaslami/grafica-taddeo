@@ -62,12 +62,12 @@ export default function Navbar({ currentColor, currentIndex }: NavbarProps) {
   return (
     <>
       <motion.nav
-        className={`w-full py-4 fixed top-0 left-0 right-0 backdrop-blur-md z-50 transition-colors duration-300 ${navBackground}`}
+        className={` w-full py-4 fixed top-0 left-0 right-0 backdrop-blur-md z-50 transition-colors duration-300 ${navBackground}`}
         animate={{
           borderBottom: isScrolled ? "1px solid #e5e7eb" : "1px solid transparent",
         }}
       >
-        <div className="w-[90%] max-w-7xl mx-auto flex items-center justify-between">
+        <div className="w-[90%] max-w-6xl mx-auto flex items-center justify-between px-4">
           <Link href="/" className="relative w-40 h-12">
             <Image src="/logo.png" alt="Gráfica Taddeo" fill className="object-contain" priority />
           </Link>

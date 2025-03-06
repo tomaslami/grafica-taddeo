@@ -20,12 +20,12 @@ export default function Hero({
   backgroundImages
 }: HeroProps) {
   return (
-    <div className='relative  w-full min-h-screen'>
+    <div className='relative w-full min-h-screen'>
       <BackgroundCarousel
         currentIndex={currentIndex}
         images={backgroundImages}
       />
-      <div className='relative z-10 w-[90%] max-w-7xl mx-auto min-h-screen flex items-center '>
+      <div className='relative z-10 w-[90%] max-w-6xl mx-auto min-h-screen flex items-center p-4'>
         <div className='w-full flex flex-col lg:flex-row lg:justify-start justify-center items-center gap-8 lg:gap-16 py-12 lg:py-0'>
           <div className='flex flex-col justify-center w-full lg:w-1/2'>
             <motion.div

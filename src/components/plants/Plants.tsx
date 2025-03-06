@@ -1,19 +1,22 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 const plants = [
   {
     title: 'Planta Pompeya',
-    image: '/plants/pompeya.webp'
+    image: '/plants/pompeya.webp',
+    map: 'https://www.google.com.ar/maps/place/Comuna+4,+Charr%C3%BAa+3480,+C1437+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.6579811,-58.4284372,17z/data=!3m1!4b1!4m6!3m5!1s0x95bccb9b0262cfc3:0x899a96357286255a!8m2!3d-34.6579855!4d-58.4258623!16s%2Fg%2F11csmks9rq?entry=ttu&g_ep=EgoyMDI1MDMwMy4wIKXMDSoASAFQAw%3D%3D'
   },
   {
     title: 'Planta Boedo',
-    image: '/plants/boedo.webp'
+    image: '/plants/boedo.webp',
+    map: 'https://www.google.com.ar/maps/place/Av.+Juan+de+Garay+3950,+C1257+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.6319313,-58.4224614,17z/data=!3m1!4b1!4m6!3m5!1s0x95bccbaa4c023991:0x9c8bfd29a22c9659!8m2!3d-34.6319357!4d-58.4198865!16s%2Fg%2F11f3thd5zs?entry=ttu&g_ep=EgoyMDI1MDMwMy4wIKXMDSoASAFQAw%3D%3D'
   }
 ]
 
 export default function Plants() {
   return (
-    <section id='plantas' className="w-full bg-gray-50 py-16 px-4 md:py-24 " >
+    <section id='plantas' className="w-full bg-gray-50 py-16 px-4 md:py-24 max-w-7xl mx-auto" >
       <div className="w-[90%] max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Nuestras <span className="text-blue-400">Plantas</span>
@@ -25,7 +28,12 @@ export default function Plants() {
               key={plant.title}
               className="group relative overflow-hidden rounded-2xl"
             >
-              <div className="aspect-[4/3]">
+              <Link
+              target='_blank'
+              href={plant.map}
+              >
+              <div
+               className="aspect-[4/3]">
                 <Image
                   src={plant.image}
                   alt={plant.title}
@@ -37,6 +45,7 @@ export default function Plants() {
                   {plant.title}
                 </h3>
               </div>
+                </Link>
             </div>
           ))}
         </div>

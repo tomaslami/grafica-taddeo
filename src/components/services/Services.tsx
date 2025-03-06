@@ -45,7 +45,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id='servicios' className="w-full bg-white py-12 px-4 md:py-20 scroll-m-10">
+    <section id='servicios' className="w-full bg-white py-12 px-4 md:py-20 scroll-m-10 max-w-7xl mx-auto">
       <div className="w-[90%] max-w-7xl mx-auto">
         <div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium">

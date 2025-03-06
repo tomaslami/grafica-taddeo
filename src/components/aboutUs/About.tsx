@@ -10,11 +10,11 @@ const paragraphs = [
 
 export default function AboutSection() {
   return (
-    <section id="historia" className="w-full bg-white py-12 md:py-16">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="historia" className="w-full bg-white py-12 md:py-16 max-w-7xl mx-auto">
+      <div className="container px-4 md:px-6 max-w-6xl mx-auto ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Columna de imágenes */}
-          <div className="grid grid-cols-2 gap-3 h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] relative">
+          <div className=" grid-cols-2 gap-3 h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] relative hidden sm:grid">
             <div className="relative lg:aspect-[5/6] col-span-1 lg:top-4">
               <Image
                 src="/images/image1.jpg"
@@ -32,7 +32,6 @@ export default function AboutSection() {
               />
             </div>
             <div className="relative lg:flex lg:w-full lg:h-max lg:aspect-[6/5] col-span-1 lg:justify-end lg:mt-6">
-              
               <Image
                 src="/images/image2.jpg"
                 alt="Equipo de trabajo"
@@ -51,11 +50,11 @@ export default function AboutSection() {
           </div>
 
           {/* Columna de contenido */}
-          <div className="flex flex-col justify-center space-y-4 mt-8 lg:mt-0">
+          <div className="flex flex-col justify-center space-y-4 mt-8 lg:mt-0 gap-5 sm:gap-0">
             <div className="space-y-1">
-              <h2 className="text-3xl font-bold text-black">¿Quienes somos?</h2>
+              <h2 className="text-3xl font-bold text-black">¿Quiénes somos?</h2>
               <h3 className="text-2xl md:text-xl  font-medium text-black">
-                Desde 1992 ofreciendo trabajos de calidad.
+                Desde 1992 ofreciendo trabajos de calidad
               </h3>
             </div>
 
@@ -66,8 +65,8 @@ export default function AboutSection() {
             </div>
 
             <div className="pt-2">
-              <Link href="https://wa.me/5491134217410" className="px-5 py-1.5  bg-[#FAED14] font-medium ">
-                Contáctanos para asesorarte
+              <Link href="https://wa.me/5491134217410" className=" px-5 py-1.5  bg-[#FAED14] font-medium ">
+                Contactanos para asesorarte
               </Link>
             </div>
           </div>
