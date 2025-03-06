@@ -19,8 +19,8 @@ export default function Footer() {
               />
             </Link>
             <div className="text-sm text-gray-600 space-y-1">
-              <p>Olazábal 5461, Pompeya, CABA</p>
-              <p>Garay 3959. Boedo, CABA</p>
+              <p>Charrua 3480, CABA</p>
+              <p>Garay 3959 Boedo, CABA</p>
               <p className="text-gray-400">
                 Desarrollado por <Link href="https://synera.com.ar/" className="text-[#00B6FF] hover:text-[#00B6FF]/90">Synera</Link>
               </p>

@@ -11,7 +11,7 @@ export default function SynchronizedLayout() {
 
   const specialties = useMemo(
     () => [
-      "Comunicacion Visual",
+      "Comunicación Visual",
       "Impresión Offset",
       "Envases y embalajes",
       "Impresión Digital",
