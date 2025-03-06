@@ -68,7 +68,7 @@ export default function Footer() {
                   className="flex items-center text-gray-600 hover:text-gray-900"
                 >
                   <Mail className="w-4 h-4 mr-2 text-[#00B6FF]" />
-                  info@graficataddeo.com
+                  info@graficataddeo.com.ar
                 </Link>
               </li>
               <li>
