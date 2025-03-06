@@ -10,17 +10,41 @@ const paragraphs = [
 
 export default function AboutSection() {
   return (
-    <section id="historia" className="w-full bg-white sm:py-12 md:py-16 max-w-7xl mx-auto">
+    <section id="historia" className="w-full bg-white py-12 md:py-16 max-w-7xl mx-auto">
       <div className="container px-4 md:px-6 max-w-6xl mx-auto ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* Columna de imagen */}
-          <div className="relative h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] hidden sm:flex items-center">
-            <div className="relative w-full h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+          {/* Columna de imágenes */}
+          <div className=" grid-cols-2 gap-3 h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] relative hidden sm:grid">
+            <div className="relative lg:aspect-[5/6] col-span-1 lg:top-6">
               <Image
                 src="/images/instalaciones.png"
-                alt="Instalaciones de producción"
+                alt="Proceso de impresión"
                 fill
-                className="object-cover rounded-lg"
+                className="object-cover rounded-lg bg-gray-400"
+              />
+            </div>
+            <div className="relative lg:aspect-[6/5] col-span-1 lg:top-10">
+              <Image
+                src="/images/instalaciones2.webp"
+                alt="Control de calidad"
+                fill
+                className="object-cover rounded-lg bg-gray-400"
+              />
+            </div>
+            <div className="relative lg:flex lg:w-full lg:h-max lg:aspect-[6/5] col-span-1 lg:justify-end lg:mt-6">
+              <Image
+                src="/images/instalaciones3.webp"
+                alt="Equipo de trabajo"
+                fill
+                className="object-cover rounded-lg bg-gray-400"
+              />
+            </div>
+            <div className="relative lg:aspect-[5/6]  col-span-1 lg:bottom-14">
+            <Image
+                src="/images/instalaciones4.webp"
+                alt="Proceso de producción"
+                fill
+                className="object-cover rounded-lg bg-gray-400"
               />
             </div>
           </div>
@@ -51,3 +75,4 @@ export default function AboutSection() {
     </section>
   )
 }
+
