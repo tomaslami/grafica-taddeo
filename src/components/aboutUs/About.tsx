@@ -10,7 +10,7 @@ const paragraphs = [
 
 export default function AboutSection() {
   return (
-    <section id="historia" className="w-full bg-white py-12 md:py-16 max-w-7xl mx-auto">
+    <section id="historia" className="w-full bg-white sm:py-12 md:py-16 max-w-7xl mx-auto">
       <div className="container px-4 md:px-6 max-w-6xl mx-auto ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
           {/* Columna de imágenes */}
