@@ -20,7 +20,7 @@ export default function Footer() {
             </Link>
             <div className="text-sm text-gray-600 space-y-1">
               <p>Charrúa 3480, CABA</p>
-              <p>Av Juan de Garay 3959 Boedo, CABA</p>
+              <p>Av Juan de Garay 3959, CABA</p>
               <p className="text-gray-400">
                 Desarrollado por <Link href="https://synera.com.ar/" className="text-[#00B6FF] hover:text-[#00B6FF]/90">Synera</Link>
               </p>
