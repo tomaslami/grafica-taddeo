@@ -64,7 +64,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="mailto:info@graficataddeo.com"
+                  href="mailto:info@graficataddeo.com.ar"
                   className="flex items-center text-gray-600 hover:text-gray-900"
                 >
                   <Mail className="w-4 h-4 mr-2 text-[#00B6FF]" />
