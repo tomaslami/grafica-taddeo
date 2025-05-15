@@ -71,6 +71,9 @@ export default async function Category({ params }: { params: Params }) {
                   category["carousel-4"],
                   category["carousel-5"],
                   category["carousel-6"],
+                  category["carousel-7"],
+                  category["carousel-8"],
+                  category["carousel-9"],
                 ].filter((image): image is string => Boolean(image))}
               />
             </div>
