@@ -20,7 +20,7 @@ const services = [
   {
     title: 'Luaj para Iamim Norahim',
     image: '/luaj/luaj-1.jpg',
-    href: '/luaj-para-iamim-norahim',
+    href: '/luaj',
     gridClass: 'md:col-span-4'
   },
   {

@@ -42,6 +42,7 @@ export interface Category {
   'carousel-15'?: string
   'carousel-16'?: string
   'carousel-17'?: string
+  'carousel-18'?: string
   additionalSections?: AdditionalSection[]
 }
 

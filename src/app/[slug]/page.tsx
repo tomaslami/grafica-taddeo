@@ -50,6 +50,7 @@ export default async function Category({ params }: { params: Params }) {
     category["carousel-15"],
     category["carousel-16"],
     category["carousel-17"],
+    category["carousel-18"],
   ].filter((image): image is string => Boolean(image))
 
   return (
@@ -71,10 +72,8 @@ export default async function Category({ params }: { params: Params }) {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="container mx-auto px-4 py-8 sm:py-10 md:py-12">
         <div className="max-w-[1200px] mx-auto space-y-6 sm:space-y-8">
-          {/* Title and Description */}
           <div className="space-y-4 px-4 sm:px-8 md:px-16 lg:px-32">
             <h2 className="text-xl sm:text-2xl font-bold text-black">{category.subtitle}</h2>
             <div className="space-y-1 text-gray-600">
@@ -86,7 +85,6 @@ export default async function Category({ params }: { params: Params }) {
             <VideoCarousel videos={videos} />
           </div>
 
-          {/* Carousel Section */}
           <article className="w-full">
             <div className="w-full px-4 sm:px-8 md:px-16 lg:px-32">
               <Swipe images={carouselImages} />
@@ -94,12 +92,10 @@ export default async function Category({ params }: { params: Params }) {
           </article>
         </div>
 
-        {/* Secciones adicionales (si existen) */}
         {category.additionalSections && category.additionalSections.length > 0 && (
           <div className="max-w-[1200px] mx-auto space-y-6 sm:space-y-8 mt-12">
             {category.additionalSections.map((section, sectionIndex) => (
               <div key={sectionIndex} className="space-y-6 sm:space-y-8">
-                {/* Título y descripción */}
                 <div className="space-y-4 px-4 sm:px-8 md:px-16 lg:px-32">
                   <h2 className="text-xl sm:text-2xl font-bold text-black">{section.title}</h2>
                   {section.subtitle && (
@@ -112,14 +108,12 @@ export default async function Category({ params }: { params: Params }) {
                   )}
                 </div>
 
-                {/* Videos de la sección adicional */}
                 {section.videos && section.videos.length > 0 && (
                   <div className="px-4 sm:px-8 md:px-16 lg:px-32 mx-auto">
                     <VideoCarousel videos={section.videos} />
                   </div>
                 )}
 
-                {/* Carrusel de imágenes de la sección adicional */}
                 {section.images && section.images.length > 0 && (
                   <article className="w-full">
                     <div className="w-full px-4 sm:px-8 md:px-16 lg:px-32">
