@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import Image from "next/image"
 import Swipe from "./components/Swipe"
 import VideoCarousel from "./components/VideoCarousel"
+import Link from "next/link"
 
 // Correct type definition for Next.js dynamic route parameters
 type Params = Promise<{ slug: string }>
@@ -90,6 +91,18 @@ export default async function Category({ params }: { params: Params }) {
               <Swipe images={carouselImages} />
             </div>
           </article>
+
+          {/* CTA Section */}
+          <div className="px-4 sm:px-8 md:px-16 lg:px-32 flex justify-center mt-8">
+            <Link
+              href="https://wa.me/5491134217410?text=Hola,%20me%20gustaría%20recibir%20asesoramiento"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#25D366]/80 transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              Hacé tu idea realidad
+            </Link>
+          </div>
         </div>
 
         {category.additionalSections && category.additionalSections.length > 0 && (
@@ -121,6 +134,18 @@ export default async function Category({ params }: { params: Params }) {
                     </div>
                   </article>
                 )}
+
+                {/* CTA Section */}
+                <div className="px-4 sm:px-8 md:px-16 lg:px-32 flex justify-center mt-8">
+                  <a
+                    href="https://wa.me/5491134217410"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-3 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-[#20BA5A] transition-colors duration-200 shadow-lg hover:shadow-xl"
+                  >
+                    Hacé tu idea realidad
+                  </a>
+                </div>
               </div>
             ))}
           </div>
