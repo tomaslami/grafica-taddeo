@@ -1,9 +1,8 @@
 "use client"
 import Image from "next/image"
 import type React from "react"
-import { useEffect, useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Pagination } from "swiper/modules"
+import { Pagination } from "swiper/modules"
 
 // Import Swiper styles
 import "swiper/css"
@@ -14,41 +13,41 @@ interface SwipeProps {
 }
 
 const Swipe: React.FC<SwipeProps> = ({ images }) => {
-  const [slidesPerView, setSlidesPerView] = useState(1)
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setSlidesPerView(3)
-      } else if (window.innerWidth >= 768) {
-        setSlidesPerView(2)
-      } else {
-        setSlidesPerView(1)
-      }
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+  // Calcular cuántas imágenes mostrar por vista (siempre 3, o menos si hay menos de 3)
+  const slidesPerView = images.length >= 3 ? 3 : images.length
+  // Mover de 3 en 3, o del total si hay menos de 3
+  const slidesPerGroup = images.length >= 3 ? 3 : images.length
 
   return (
-    <div className="w-full h-max">
+    <div className="w-full h-max relative">
       <Swiper
         slidesPerView={slidesPerView}
+        slidesPerGroup={slidesPerGroup}
         spaceBetween={20}
-        centeredSlides={true}
         loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
         pagination={{
           clickable: true,
           bulletActiveClass: "swiper-pagination-bullet-active",
         }}
-        modules={[Autoplay, Pagination]}
+        modules={[Pagination]}
         className="mySwiper"
+        breakpoints={{
+          0: {
+            slidesPerView: images.length >= 3 ? 3 : images.length,
+            slidesPerGroup: images.length >= 3 ? 3 : images.length,
+            spaceBetween: 15,
+          },
+          640: {
+            slidesPerView: images.length >= 3 ? 3 : images.length,
+            slidesPerGroup: images.length >= 3 ? 3 : images.length,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: images.length >= 3 ? 3 : images.length,
+            slidesPerGroup: images.length >= 3 ? 3 : images.length,
+            spaceBetween: 20,
+          },
+        }}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className="flex items-center justify-center">

@@ -6,40 +6,46 @@ import { motion } from 'framer-motion'
 
 const services = [
   {
-    title: 'Comunicación Visual',
-    image: '/comunicacion-visual/comuVisual-portada.jpg',
-    href: '/comunicacion-visual',
-    gridClass: 'md:col-span-2 md:row-span-2'
-  },
-  {
-    title: 'Impresión Offset',
-    image: '/impresion-offset/offset-portada.jpg',
-    href: '/impresion-offset',
-    gridClass: 'md:col-span-1'
-  },
-  {
-    title: 'Merchandising',
-    image: '/merchandising/Merch4.webp',
-    href: '/merchandising',
-    gridClass: 'md:col-span-1'
+    title: 'Impresión Digital',
+    image: '/impresion-digital/Impresion1.webp',
+    href: '/impresion-digital',
+    gridClass: 'md:col-span-4'
   },
   {
     title: 'Envases y Embalajes',
     image: '/envases-embalajes/envases_2.webp',
     href: '/envases-embalajes',
-    gridClass: 'md:col-span-2 md:row-span-2'
+    gridClass: 'md:col-span-4'
+  },
+  {
+    title: 'Luaj para Iamim Norahim',
+    image: '/luaj/luaj-1.jpg',
+    href: '/luaj-para-iamim-norahim',
+    gridClass: 'md:col-span-4'
+  },
+  {
+    title: 'Impresión Offset',
+    image: '/impresion-offset/offset-portada.jpg',
+    href: '/impresion-offset',
+    gridClass: 'md:col-span-3'
   },
   {
     title: 'Vasos Polipapel',
-    image: '/vasos-polipapel/vasos_3.webp',
+    image: '/vasos-polipapel/vasos_13.jpg',
     href: '/vasos-polipapel',
-    gridClass: 'md:col-span-1 md:row-span-1'
+    gridClass: 'md:col-span-3'
   },
   {
-    title: 'Impresión Digital',
-    image: '/impresion-digital/Impresion1.webp',
-    href: '/impresion-digital',
-    gridClass: 'md:col-span-1 md:row-span-1'
+    title: 'Merchandising',
+    image: '/merchandising/Merch4.webp',
+    href: '/merchandising',
+    gridClass: 'md:col-span-3'
+  },
+  {
+    title: 'Comunicación Visual',
+    image: '/comunicacion-visual/comuVisual-portada.jpg',
+    href: '/comunicacion-visual',
+    gridClass: 'md:col-span-3'
   },
 ]
 
@@ -53,7 +59,7 @@ export default function Services() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[300px]">
           {services.map((service) => (
             <motion.div
               key={service.title}
