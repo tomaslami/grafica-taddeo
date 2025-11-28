@@ -100,7 +100,6 @@ const categoryData: CategoryData = {
     }
   ]
 }
-
 export function getCategory(slug: string): Category | undefined {
   return categoryData.category.find(cat => cat.title === slug)
 }
