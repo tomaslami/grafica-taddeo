@@ -60,9 +60,9 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
 
   if (videos.length <= 1) {
     return (
-      <div className="w-full rounded-lg shadow-lg">
+      <div className="w-full shadow-lg rounded-xl">
         <video
-          className="w-full h-[400px] sm:h-[500px] md:h-[500px] object-cover"
+          className="w-full h-[400px] sm:h-[500px] md:h-[500px] object-cover rounded-xl"
           autoPlay
           muted
           loop
@@ -76,14 +76,14 @@ export default function VideoCarousel({ videos }: VideoCarouselProps) {
   }
 
   return (
-    <div className="w-full rounded-lg shadow-lg relative">
+    <div className="w-full shadow-lg relative rounded-xl">
       {videos.map((video, index) => (
         <video
           key={index}
           ref={(el) => {
             videoRefs.current[index] = el
           }}
-          className={`w-full h-[400px] sm:h-[500px] md:h-[500px] object-cover ${
+          className={`w-full h-[400px] sm:h-[500px] md:h-[500px] object-cover rounded-xl ${
             index === currentIndex ? "block" : "hidden"
           }`}
           autoPlay={index === currentIndex}

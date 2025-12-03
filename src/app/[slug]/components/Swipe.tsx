@@ -13,18 +13,15 @@ interface SwipeProps {
 }
 
 const Swipe: React.FC<SwipeProps> = ({ images }) => {
-  // Calcular cuántas imágenes mostrar por vista (siempre 3, o menos si hay menos de 3)
-  const slidesPerView = images.length >= 3 ? 3 : images.length
-  // Mover de 3 en 3, o del total si hay menos de 3
-  const slidesPerGroup = images.length >= 3 ? 3 : images.length
+  // Calcular valores base
+  const getSlidesPerView = (min: number) => Math.min(min, images.length)
+  const getSlidesPerGroup = (min: number) => Math.min(min, images.length)
 
   return (
     <div className="w-full h-max relative">
       <Swiper
-        slidesPerView={slidesPerView}
-        slidesPerGroup={slidesPerGroup}
         spaceBetween={20}
-        loop={true}
+        loop={images.length >= 3}
         pagination={{
           clickable: true,
           bulletActiveClass: "swiper-pagination-bullet-active",
@@ -32,19 +29,22 @@ const Swipe: React.FC<SwipeProps> = ({ images }) => {
         modules={[Pagination]}
         className="mySwiper"
         breakpoints={{
+          // Móvil: 1 imagen por vista, mover de 1 en 1
           0: {
-            slidesPerView: images.length >= 3 ? 3 : images.length,
-            slidesPerGroup: images.length >= 3 ? 3 : images.length,
+            slidesPerView: getSlidesPerView(1),
+            slidesPerGroup: getSlidesPerGroup(1),
+            spaceBetween: 10,
+          },
+          // Tablet: 2 imágenes por vista, mover de 2 en 2
+          640: {
+            slidesPerView: getSlidesPerView(2),
+            slidesPerGroup: getSlidesPerGroup(2),
             spaceBetween: 15,
           },
-          640: {
-            slidesPerView: images.length >= 3 ? 3 : images.length,
-            slidesPerGroup: images.length >= 3 ? 3 : images.length,
-            spaceBetween: 20,
-          },
+          // Desktop: 3 imágenes por vista, mover de 3 en 3
           1024: {
-            slidesPerView: images.length >= 3 ? 3 : images.length,
-            slidesPerGroup: images.length >= 3 ? 3 : images.length,
+            slidesPerView: getSlidesPerView(3),
+            slidesPerGroup: getSlidesPerGroup(3),
             spaceBetween: 20,
           },
         }}
@@ -57,7 +57,7 @@ const Swipe: React.FC<SwipeProps> = ({ images }) => {
                 height={500}
                 src={image || "/placeholder.svg"}
                 alt={`Imagen ${index + 1}`}
-                className="w-full h-[300px] object-cover rounded-xl"
+                className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-cover rounded-xl"
               />
             </div>
           </SwiperSlide>

@@ -17,7 +17,7 @@ const categoryData: CategoryData = {
     },
     {
       "title": "comunicacion-visual",
-      "bgImage": "/comunicacion-visual/portada.jpg",
+      "bgImage": "/comunicacion-visual/comu7.jpg",
       "value": "Comunicación Visual",
       "subtitle": "Impacto que Comunica",
       "video": ["/comunicacion-visual/comunicacion.mp4"],
@@ -78,13 +78,13 @@ const categoryData: CategoryData = {
     },
     {
       "title": "merchandising",
-      "bgImage": "/bgImage.png",
+      "bgImage": "/merchandising/portada.jpg",
       "value": "Merchandising",
       "subtitle": "Tu Marca en Todo",
       "video": ["/merchandising/merch.mp4"],
       "text": "Amplia variedad en almanaques y agendas personalizadas",
       "principalImage": "",
-      "carousel-1": "/merchandising/Merch.webp",
+      "carousel-1": "/merchandising/Merch-1.webp",
       "carousel-2": "/merchandising/Merch2.webp",
       "carousel-3": "/merchandising/Merch3.webp",
       "carousel-4": "/merchandising/Merch4.webp",
@@ -140,7 +140,19 @@ const categoryData: CategoryData = {
       "carousel-13": "/luaj/luaj-16.jpg",
       "carousel-14": "/luaj/luaj-17.jpg",
       "carousel-15": "/luaj/luaj-11.jpg"
-    }
+    },
+    {
+      "title": "etiquetas-de-alto-impacto",
+      "bgImage": "/etiquetas-de-alto-impacto/etiquetas-de-alto-impacto.jpg",
+      "value": "Etiquetas",
+      "subtitle": "Etiquetas de alto impacto",
+      "video": [],
+      "carousel-1": "/etiquetas/eti-1.png",
+      "carousel-2": "/etiquetas/eti-2.png",
+      "carousel-3": "/etiquetas/eti-3.jpg",
+      "text": "Etiquetas de alto impacto o material sintético, ambos sin adhesivo para el contacto con los alimentos.",
+      "principalImage": "",
+    },
   ]
 }
 export function getCategory(slug: string): Category | undefined {
