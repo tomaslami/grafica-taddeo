@@ -4,7 +4,7 @@ const categoryData: CategoryData = {
   "category": [
     {
       "title": "impresion-offset",
-      "bgImage": "/impresion-offset/bgImageOff.png",
+      "bgImage": "/impresion-offset/portada.jpg",
       "value": "Impresión Offset",
       "subtitle": "Calidad en Cada Impresión",
       "video": ["/impresion-offset/offset.mp4"],
@@ -17,7 +17,7 @@ const categoryData: CategoryData = {
     },
     {
       "title": "comunicacion-visual",
-      "bgImage": "/comunicacion-visual/comu7.jpg",
+      "bgImage": "/comunicacion-visual/portada.jpg",
       "value": "Comunicación Visual",
       "subtitle": "Impacto que Comunica",
       "video": ["/comunicacion-visual/comunicacion.mp4"],
@@ -45,7 +45,7 @@ const categoryData: CategoryData = {
     },
     {
       "title": "impresion-digital",
-      "bgImage": "/impresion-digital/bgImageDigital.webp",
+      "bgImage": "/impresion-digital/portada.jpg",
       "value": "Impresión Digital",
       "subtitle": "Precisión al Instante",
       "video": ["/impresion-digital/digital.mp4"],
@@ -59,7 +59,7 @@ const categoryData: CategoryData = {
     },
     {
       "title": "envases-embalajes",
-      "bgImage": "/bgImage.png",
+      "bgImage": "/envases-embalajes/banner.jpg",
       "value": "Envases y Emabalajes",
       "subtitle": "Packaging que Destaca",
       "video": ["/envases-embalajes/envases.mp4"],
@@ -95,7 +95,7 @@ const categoryData: CategoryData = {
     },
     {
       "title": "vasos-polipapel",
-      "bgImage": "/bgImage.png",
+      "bgImage": "/vasos-polipapel/portada.jpg",
       "value": "Vasos polipapel",
       "subtitle": "Vasos que Hablan",
       "video": ["/vasos-polipapel/video_vasos.mp4"],
@@ -119,7 +119,7 @@ const categoryData: CategoryData = {
     },
     {
       "title": "luaj",
-      "bgImage": "/luaj/luaj-16.jpg",
+      "bgImage": "/luaj/portada.jpg",
       "value": "Luaj para Iamim Norahim",
       "subtitle": "Calendarios personalizados",
       "video": ["/luaj/videos/luaj-1.mp4", "/luaj/videos/luaj-2.mp4"],
@@ -143,9 +143,9 @@ const categoryData: CategoryData = {
     },
     {
       "title": "etiquetas-de-alto-impacto",
-      "bgImage": "/etiquetas-de-alto-impacto/etiquetas-de-alto-impacto.jpg",
-      "value": "Etiquetas",
-      "subtitle": "Etiquetas de alto impacto",
+      "bgImage": "/etiquetas/portada.jpg",
+      "value": "Etiquetas de alto impacto para alimentos",
+      "subtitle": "Etiquetas de alto impacto para alimentos",
       "video": [],
       "carousel-1": "/etiquetas/eti-1.png",
       "carousel-2": "/etiquetas/eti-2.png",

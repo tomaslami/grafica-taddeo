@@ -82,9 +82,11 @@ export default async function Category({ params }: { params: Params }) {
             </div>
           </div>
 
-          <div className="px-4 sm:px-8 md:px-16 lg:px-32 mx-auto rounded-xl">
-            <VideoCarousel videos={videos} />
-          </div>
+          {videos.length > 0 && (
+            <div className="px-4 sm:px-8 md:px-16 lg:px-32 mx-auto rounded-xl">
+              <VideoCarousel videos={videos} />
+            </div>
+          )}
 
           <article className="w-full">
             <div className="w-full px-4 sm:px-8 md:px-16 lg:px-32">
