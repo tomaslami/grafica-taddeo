@@ -1,9 +1,8 @@
 "use client"
 import Image from "next/image"
 import type React from "react"
-import { useEffect, useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Pagination } from "swiper/modules"
+import { Pagination } from "swiper/modules"
 
 // Import Swiper styles
 import "swiper/css"
@@ -14,41 +13,41 @@ interface SwipeProps {
 }
 
 const Swipe: React.FC<SwipeProps> = ({ images }) => {
-  const [slidesPerView, setSlidesPerView] = useState(1)
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setSlidesPerView(3)
-      } else if (window.innerWidth >= 768) {
-        setSlidesPerView(2)
-      } else {
-        setSlidesPerView(1)
-      }
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+  // Calcular valores base
+  const getSlidesPerView = (min: number) => Math.min(min, images.length)
+  const getSlidesPerGroup = (min: number) => Math.min(min, images.length)
 
   return (
-    <div className="w-full h-max">
+    <div className="w-full h-max relative">
       <Swiper
-        slidesPerView={slidesPerView}
         spaceBetween={20}
-        centeredSlides={true}
-        loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
+        loop={images.length >= 3}
         pagination={{
           clickable: true,
           bulletActiveClass: "swiper-pagination-bullet-active",
         }}
-        modules={[Autoplay, Pagination]}
+        modules={[Pagination]}
         className="mySwiper"
+        breakpoints={{
+          // Móvil: 1 imagen por vista, mover de 1 en 1
+          0: {
+            slidesPerView: getSlidesPerView(1),
+            slidesPerGroup: getSlidesPerGroup(1),
+            spaceBetween: 10,
+          },
+          // Tablet: 2 imágenes por vista, mover de 2 en 2
+          640: {
+            slidesPerView: getSlidesPerView(2),
+            slidesPerGroup: getSlidesPerGroup(2),
+            spaceBetween: 15,
+          },
+          // Desktop: 3 imágenes por vista, mover de 3 en 3
+          1024: {
+            slidesPerView: getSlidesPerView(3),
+            slidesPerGroup: getSlidesPerGroup(3),
+            spaceBetween: 20,
+          },
+        }}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className="flex items-center justify-center">
@@ -58,7 +57,7 @@ const Swipe: React.FC<SwipeProps> = ({ images }) => {
                 height={500}
                 src={image || "/placeholder.svg"}
                 alt={`Imagen ${index + 1}`}
-                className="w-full h-[300px] object-cover rounded-xl"
+                className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-cover rounded-xl"
               />
             </div>
           </SwiperSlide>

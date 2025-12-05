@@ -1,10 +1,28 @@
 
+export interface AdditionalSection {
+  title: string
+  subtitle: string
+  text: string
+  videos: string[]
+  images: string[]
+}
+
 export interface Category {
   title: string
   bgImage: string
   value: string
   subtitle: string
-  video: string
+  video: string[]
+  'video-1'?: string
+  'video-2'?: string
+  'video-3'?: string
+  'video-4'?: string
+  'video-5'?: string
+  'video-6'?: string
+  'video-7'?: string
+  'video-8'?: string
+  'video-9'?: string
+  'video-10'?: string
   text: string
   principalImage: string
   'carousel-1'?: string
@@ -16,6 +34,16 @@ export interface Category {
   'carousel-7'?: string
   'carousel-8'?: string
   'carousel-9'?: string
+  'carousel-10'?: string
+  'carousel-11'?: string
+  'carousel-12'?: string
+  'carousel-13'?: string
+  'carousel-14'?: string
+  'carousel-15'?: string
+  'carousel-16'?: string
+  'carousel-17'?: string
+  'carousel-18'?: string
+  additionalSections?: AdditionalSection[]
 }
 
 export interface CategoryData {
